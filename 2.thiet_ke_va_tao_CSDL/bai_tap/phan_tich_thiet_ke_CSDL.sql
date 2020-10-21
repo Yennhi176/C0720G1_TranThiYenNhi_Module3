@@ -28,8 +28,7 @@ create table thanhToan(
 maKH int not null,
 maKiemTra varchar(50) not null,
 ngayThanhToan date not null,
-soTien double not null,
-foreign key (maKH) references khachHang(maKH)
+soTien double not null
 );
 create table sanPham(
 maSP varchar(15) primary key,
@@ -63,3 +62,61 @@ vung varchar(50),
 quocGia varchar(50) not null,
 maVung varchar(15) not null
 );
+
+create table chiTietDonHang(
+maHoaDon int,
+maSP varchar(15),
+primary key (maHoaDon,maSP)
+);
+
+
+
+alter table donHangCuaKhach 	
+add maKH int;
+
+alter table donHangCuaKhach
+add constraint donHangCuaKhach_fk
+foreign key(maKH) references khachHang(maKH);
+
+
+
+alter table thanhToan
+add constraint thanhToan_fk
+foreign key(maKH) references khachHang(maKH);
+
+alter table chiTietDonHang
+add constraint chiTietDonHang_fk
+foreign key(maHoaDon) references donHangCuaKhach(maHoaDon);
+
+alter table chiTietDonHang
+add constraint chiTietDH_fk
+foreign key(maSP) references sanPham(maSP);
+
+alter table sanPham
+add maLoaiSP varchar(50);
+
+alter table sanPham
+add constraint sanPham_fk
+foreign key(maLoaiSP) references loaiSP(maLoaiSP);
+
+alter table khachHang
+add maNhanVien int;
+
+alter table khachHang
+add constraint khachHang_fk
+foreign key(maNhanVien) references nhanVien(maNhanVien);
+
+alter table nhanVien
+add maVanPhong varchar(10);
+
+alter table nhanVien
+add constraint nhanVien_fk
+foreign key(maVanPhong) references vanPhong(maVanPhong);
+
+alter table nhanVien
+add maNV int;
+
+alter table nhanVien
+add constraint nV_fk
+foreign key(maNV) references nhanVien(maNhanVien);
+
