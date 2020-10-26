@@ -1,0 +1,17 @@
+.body{
+    width: 500px;
+    height: auto;
+    text-align: justify;
+}
+p{
+    text-indent: 50px;
+}
+.text-bold{
+    font-weight: bold;
+}
+.text-color{
+    color: Cyan;
+}
+.text-color2{
+    color: blue;
+}

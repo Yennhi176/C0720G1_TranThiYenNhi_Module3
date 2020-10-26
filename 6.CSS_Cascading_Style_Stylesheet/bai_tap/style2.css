@@ -1,0 +1,51 @@
+#menu {
+    background: brown;
+    height: 50px;
+    text-align: center;
+}
+#left{
+    position: absolute;
+    left: 50px;
+    width: 30%;
+    height: 500px;
+    background: antiquewhite;
+
+}
+#right{
+    position: absolute;
+    left: 500px;
+    width: 65%;
+    height: 500px;
+    background: cyan;
+}
+.truyen{
+    font-size: 25px;
+}
+a{
+    font-size: 40px;
+}
+#between{
+    position: absolute;
+    left: 20px;
+    width: 30%;
+    height: 200px;
+}
+#between2{
+    position: absolute;
+    left: 340px;
+    width: 30%;
+    height: 200px;
+}
+#between3{
+    position: absolute;
+    left: 660px;
+    width: 30%;
+    height: 200px;
+}
+#between4{
+    position: absolute;
+
+    left: 20px;
+    width: 30%;
+    height: 200px;
+}
