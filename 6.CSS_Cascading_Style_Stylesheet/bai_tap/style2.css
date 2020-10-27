@@ -15,20 +15,23 @@
     position: absolute;
     left: 500px;
     width: 65%;
-    height: 500px;
+    height:500px;
     background: cyan;
 }
 .truyen{
     font-size: 25px;
+    margin-top: 25px;
 }
 a{
     font-size: 40px;
+    text-decoration: none;
+
 }
 #between{
     position: absolute;
-    left: 20px;
-    width: 30%;
+    width : 300px;
     height: 200px;
+    left: 20px;
 }
 #between2{
     position: absolute;
@@ -44,8 +47,24 @@ a{
 }
 #between4{
     position: absolute;
-
+    width : 300px;
+    height: 200px;
     left: 20px;
+    top: 270px;
+}
+#between5{
+    position: absolute;
+    left: 340px;
     width: 30%;
     height: 200px;
+    top: 270px;
 }
+#between6 {
+    position: absolute;
+    left: 660px;
+    width: 30%;
+    height: 200px;
+    top: 270px;
+
+}
+
