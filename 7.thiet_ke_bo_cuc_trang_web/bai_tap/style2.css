@@ -72,16 +72,18 @@ aside {
     background-color: lightgrey;
     margin-bottom: 5px;
     float: right;
+    text-align: center;
 }
 
 aside a {
-    padding-top: 50px;
-    margin-top: 50px;
+   text-align: center;
+    border: 1px solid black;
     display: block;
-    margin-left: 100px;
-    margin-right: 100px;
-    border: solid 1px black;
-   position: relative;
+    height: 70px;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 25%;
+    position: relative;
 }
 
 footer {
@@ -91,5 +93,5 @@ footer {
 }
 
 footer a {
-    margin-left: 700px;
+        margin-left: 700px;
 }

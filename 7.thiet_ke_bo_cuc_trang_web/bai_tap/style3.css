@@ -39,11 +39,15 @@ left-content{
     margin-bottom: 5px;
     float: left;
 }
+left-content a{
+    padding: 10px;
+}
+
 right-content{
     padding: 100px;
     margin-bottom: 5px ;
     width: 53.3%;
-    min-height: 500px;
+    min-height: 1000px;
     background-color: red;
     float: right;
 }
