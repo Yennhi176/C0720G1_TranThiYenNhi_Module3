@@ -1,0 +1,141 @@
+.header {
+    padding: 10px;
+    color: black;
+    background-color: lightgrey;
+    position: relative;
+}
+
+.input {
+    margin-bottom: 5px;
+    margin-left: 250px;
+    position: absolute;
+    top: 25%;
+}
+
+.header ul, li {
+    display: inline;
+    margin-bottom: 5px;
+    float: right;
+}
+
+.left-content {
+    padding-top: 0px;
+    width: 15%;
+    height: 500px;
+    color: black;
+    background-color: white;
+    float: left;
+}
+
+.left-content h2 {
+    position: relative;
+    color: white;
+    background-color: blue;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+}
+
+a {
+    position: absolute;
+    top: 10px;
+    margin-left: 30%;
+}
+
+.left-content ul {
+    padding: 30px;
+}
+
+.left {
+    text-align: justify;
+    float: left;
+}
+
+.right {
+    text-align: justify;
+    margin-left: 30px;
+}
+
+.theLoai {
+    position: absolute;
+    top: 110px;
+}
+.theLoai ul li{
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.right-content {
+    position: relative;
+    width: 85%;
+    height: 500px;
+    color: black;
+    background-color: lightgrey;
+    margin-bottom: 5px;
+    float: right;
+}
+
+.header-link {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    font-size: 20px;
+    line-height: 15px;
+}
+
+.header-link li {
+    margin-left: 55px;
+}
+
+.header-link ul {
+    margin-right: 500px;
+}
+
+.right-content h1 {
+    padding: 50px;
+}
+
+.right-content span {
+    position: absolute;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+}
+
+.tr ul {
+    padding: 10px;
+    position: absolute;
+    top: 400px;
+}
+
+.anh ul {
+    top: 100px;
+}
+
+.anh li {
+    margin-left: 40px;
+}
+
+tr li {
+    margin-left: 70px;
+    float: left;
+}
+
+.tenTruyen ul {
+    top: 380px;
+    font-size: 18px;
+}
+
+.tenTruyen li {
+    margin-left: 80px;
+}
+
+.footer {
+    padding: 10px;
+    background-color: darkgray;
+}
+
+footer p {
+    margin-left: 50%;
+}
