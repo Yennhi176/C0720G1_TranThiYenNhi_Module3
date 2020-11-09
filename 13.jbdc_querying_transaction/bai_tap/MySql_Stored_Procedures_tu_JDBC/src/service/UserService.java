@@ -1,4 +1,4 @@
-package dao;
+package service;
 
 import model.User;
 
@@ -6,10 +6,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements IUserDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
+public class UserService implements IUserService {
+    private String jdbcURL = "jdbc:mysql://localhost:3306/demo4?useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "khanhtung@123";
+    private String jdbcPassword = "nhi123";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
             " (?, ?, ?);";
@@ -19,7 +19,7 @@ public class UserDAO implements IUserDAO {
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
 
-    public UserDAO() {
+    public UserService() {
     }
 
     protected Connection getConnection() {
@@ -164,6 +164,54 @@ public class UserDAO implements IUserDAO {
         }
 
     }
+
+    @Override
+    public List<User> showUser() {
+        List<User> listUser =  new ArrayList<>();
+        String query = "{CALL show_user}";
+        try (Connection connection = getConnection();
+        CallableStatement callableStatement = connection.prepareCall(query);){
+         ResultSet resultSet = callableStatement.executeQuery();
+         while (resultSet.next()){
+             User user = new User(resultSet.getInt("id"), resultSet.getString("name")
+                     , resultSet.getString("email"), resultSet.getString("country"));
+             listUser.add(user);
+         }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listUser;
+    }
+
+    @Override
+    public void updateUsers(int id, User user) {
+        String query = "{CALL update_user_by_id(?,?,?,?)}";
+        try (Connection connection = getConnection();
+            CallableStatement callableStatement = connection.prepareCall(query);){
+             callableStatement.setString(1,user.getName());
+             callableStatement.setString(2,user.getEmail());
+             callableStatement.setString(3,user.getCountry());
+            callableStatement.setInt(4,id);
+            System.out.println(callableStatement);
+            callableStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteUsers(int id) {
+        String query = "{CALL delete_user_by_id(?)}";
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query);){
+            callableStatement.setInt(1,id);
+            System.out.println(callableStatement);
+            callableStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {

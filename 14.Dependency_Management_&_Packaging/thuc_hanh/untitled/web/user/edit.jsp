@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: dell
+  User: Admin
   Date: 11/5/2020
-  Time: 4:19 PM
+  Time: 8:43 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,7 +20,7 @@
     </h2>
 </center>
 <div align="center">
-    <form action="/users" method="post">
+    <form method="post">
         <table border="1" cellpadding="5">
             <caption>
                 <h2>
@@ -60,7 +60,6 @@
                 </td>
             </tr>
         </table>
-        <input type="hidden" name="action" value="update" >
     </form>
 </div>
 </body>
